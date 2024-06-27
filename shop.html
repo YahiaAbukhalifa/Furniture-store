@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style-shop.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div id="loader"></div>
+    <div class="mainHeader">
+      <div class="left">
+        <a class="logo" href="./index.html">LOGO</a>
+        <a class="products" href="./shop.html"
+          >products <i class="fa-solid fa-caret-down"></i>
+          <div class="products-full">
+            <ul class="submenu">
+              <li>Sofa</li>
+              <li>Loveseat</li>
+              <li>Armchair</li>
+              <li>Recliner</li>
+              <li>Sectional Sofa</li>
+              <li>Coffee Table</li>
+              <li>End Table</li>
+              <li>Console Table</li>
+              <li>TV Stand</li>
+              <li>Dining Table</li>
+              <li>Dining Chair</li>
+              <li>Bed</li>
+              <li>Dresser</li>
+              <li>Nightstand</li>
+              <li>Desk</li>
+            </ul>
+          </div>
+        </a>
+        <a class="rooms" href="#rooms"
+          >rooms <i class="fa-solid fa-caret-down"></i>
+          <div class="rooms-full">
+            <ul class="submenu">
+              <li>Living Room Furniture</li>
+              <li>Bedroom Furniture</li>
+              <li>Dining Room Furniture</li>
+              <li>Kitchen Furniture</li>
+              <li>Home Office Furniture</li>
+              <li>Outdoor Furniture</li>
+            </ul>
+          </div>
+        </a>
+        <div style="position: relative;width: 40%;">
+          <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search for what you want"
+          oninput="filterProducts()"
+        />
+        <div id="search-results" class="search-container"></div>
+        </div>
+      </div>
+      <div class="right">
+        <a href="javascript:void(0)" id="wishlist-icon"><i class="fa-regular fa-heart"></i></a>
+        <a href="javascript:void(0)" onclick="toggleCart()" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+        <img src="./assets/personalimg.webp" alt="User image" class="profile" />
+        <div id="wishlist-subset" class="wishlist-subset"></div>
+        <div id="cart-items"></div>
+      </div>        
+      <div id="mobie-nav">
+        <nav id='menu'>
+          <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+          <ul>
+            <li><a href='./index.html'>Home</a></li>
+            <li><a class='dropdown-arrow' href='#'>Products</a>
+              <ul class='sub-menus'>
+                <li><a href="./shop.html">Sofa</a></li>
+                <li><a href="./shop.html">Loveseat</a></li>
+                <li><a href="./shop.html">Armchair</a></li>
+                <li><a href="./shop.html">Recliner</a></li>
+                <li><a href="./shop.html">Sectional Sofa</a></li>
+                <li><a href="./shop.html">Coffee Table</a></li>
+                <li><a href="./shop.html">End Table</a></li>
+                <li><a href="./shop.html">Console Table</a></li>
+                <li><a href="./shop.html">TV Stand</a></li>
+                <li><a href="./shop.html">Dining Table</a></li>
+                <li><a href="./shop.html">Dining Chair</a></li>
+                <li><a href="./shop.html">Bed</a></li>
+                <li><a href="./shop.html">Dresser</a></li>
+                <li><a href="./shop.html">Nightstand</a></li>
+                <li><a href="./shop.html">Desk</a></li>
+              </ul>
+            </li>
+            <li><a class='dropdown-arrow' href='#'>rooms</a>
+              <ul class='sub-menus'>
+                <li><a href="./shop.html">Living Room</a></li>
+                <li><a href="./shop.html">Bedroom</a></li>
+                <li><a href="./shop.html">Dining Room</a></li>
+                <li><a href="./shop.html">Kitchen</a></li>
+                <li><a href="./shop.html">Home Office</a></li>
+                <li><a href="./shop.html">Outdoor</a></li>
+              </ul>
+            </li>
+            <li><a href='#'>Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="search-mobile">
+      <input
+      type="text"
+      name="search"
+      id="search-mobile"
+      placeholder="Search for what you want"
+      oninput="filterProductsMobile()"
+      />
+      <div id="search-results" class="search-container"></div>
+    </div>
+    <div class="shop-products">
+      <div class="filter-container">
+        <h2 class="filter-title">Filters <i class="fa-solid fa-filter"></i></h2>
+        <div class="filters">
+          <!-- Category Filter -->
+          <div class="filter-section">
+            <h3>Category</h3>
+            <ul>
+              <li>
+                <input type="checkbox" id="sofas" name="category" /><label
+                  for="sofas"
+                  >Sofas</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="chairs" name="category" /><label
+                  for="chairs"
+                  >Chairs</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="tables" name="category" /><label
+                  for="tables"
+                  >Tables</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="beds" name="category" /><label
+                  for="beds"
+                  >Beds</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="storage" name="category" /><label
+                  for="storage"
+                  >Storage</label
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Price Range Filter -->
+          <div class="filter-section">
+            <h3>Price Range</h3>
+            <input
+              type="range"
+              id="priceRange"
+              name="priceRange"
+              min="0"
+              max="5000"
+              step="50"
+            />
+            <div class="price-display">
+              <span id="minPrice">$0</span> - <span id="maxPrice">$5000</span>
+            </div>
+          </div>
+
+          <!-- Material Filter -->
+          <div class="filter-section">
+            <h3>Material</h3>
+            <ul>
+              <li>
+                <input type="checkbox" id="wood" name="material" /><label
+                  for="wood"
+                  >Wood</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="metal" name="material" /><label
+                  for="metal"
+                  >Metal</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="glass" name="material" /><label
+                  for="glass"
+                  >Glass</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="fabric" name="material" /><label
+                  for="fabric"
+                  >Fabric</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="leather" name="material" /><label
+                  for="leather"
+                  >Leather</label
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Color Filter -->
+          <div class="filter-section">
+            <h3>Color</h3>
+            <ul>
+              <li>
+                <input type="checkbox" id="black" name="color" /><label
+                  for="black"
+                  >Black</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="white" name="color" /><label
+                  for="white"
+                  >White</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="grey" name="color" /><label
+                  for="grey"
+                  >Grey</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="blue" name="color" /><label
+                  for="blue"
+                  >Blue</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="brown" name="color" /><label
+                  for="brown"
+                  >Brown</label
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Rating Filter -->
+          <div class="filter-section">
+            <h3>Rating</h3>
+            <ul>
+              <li>
+                <input type="checkbox" id="4stars" name="rating" /><label
+                  for="4stars"
+                  >4 stars & up</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="3stars" name="rating" /><label
+                  for="3stars"
+                  >3 stars & up</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="2stars" name="rating" /><label
+                  for="2stars"
+                  >2 stars & up</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="1star" name="rating" /><label
+                  for="1star"
+                  >1 star & up</label
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Availability Filter -->
+          <div class="filter-section">
+            <h3>Availability</h3>
+            <ul>
+              <li>
+                <input type="checkbox" id="inStock" name="availability" /><label
+                  for="inStock"
+                  >In Stock</label
+                >
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="preOrder"
+                  name="availability"
+                /><label for="preOrder">Pre-order</label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="discontinued"
+                  name="availability"
+                /><label for="discontinued">Discontinued</label>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Dimensions Filter -->
+          <div class="filter-section">
+            <h3>Dimensions</h3>
+            <label for="width">Width:</label>
+            <input type="number" id="width" name="width" min="0" max="500" />
+            <label for="height">Height:</label>
+            <input type="number" id="height" name="height" min="0" max="500" />
+            <label for="depth">Depth:</label>
+            <input type="number" id="depth" name="depth" min="0" max="500" />
+          </div>
+        </div>
+      </div>
+
+      <div class="products-container" id="products-container">
+        <div
+          class="product-item"
+          data-product-id="1"
+          data-category="sofas"
+          data-material="fabric"
+          data-color="grey"
+          data-rating="4stars"
+          data-availability="inStock"
+          data-price="2500"
+          data-width="50"
+          data-height="80"
+          data-depth="40"
+        >
+          <img src="./assets/product1.webp" alt="Syltherine" />
+          <div class="offer"><p>-30%</p></div>
+          <p class="title">Syltherine</p>
+          <p class="description">Stylish cafe chair</p>
+          <div class="price">
+            <p class="price-offer">L.E 2,500</p>
+            <p class="price-no-offer">L.E 3,000</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=1'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+
+        <div 
+          class="product-item"
+          data-product-id="2"
+          data-category="chairs"
+          data-material="fabric"
+          data-color="grey"
+          data-rating="3stars"
+          data-availability="inStock"
+          data-price="2500"
+          data-width="45"
+          data-height="75"
+          data-depth="35"
+        >
+          <img src="./assets/product-2.webp" alt="Syltherine" />
+          <p class="title">Leviosa</p>
+          <p class="description">Stylish cafe chair</p>
+          <div class="price">
+            <p class="price-offer">L.E 2,500</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=2'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="product-item"
+          data-product-id="3"
+          data-category="sofas"
+          data-material="fabric"
+          data-color="grey"
+          data-rating="4stars"
+          data-availability="inStock"
+          data-price="7000"
+          data-width="70"
+          data-height="90"
+          data-depth="50"
+        >
+          <img src="./assets/product-3.webp" alt="Syltherine" />
+          <div class="offer"><p>-50%</p></div>
+          <p class="title">Lolita</p>
+          <p class="description">Luxury big sofa</p>
+          <div class="price">
+            <p class="price-offer">L.E 7,000</p>
+            <p class="price-no-offer">L.E 14,000</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=3'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="product-item"
+          data-product-id="4"
+          data-category="fans"
+          data-material="metal"
+          data-color="white"
+          data-rating="4stars"
+          data-availability="preOrder"
+          data-price="500"
+          data-width="30"
+          data-height="40"
+          data-depth="20"
+        >
+          <img src="./assets/product-4.webp" alt="Syltherine" />
+          <div class="new"><p>New</p></div>
+          <p class="title">Respira</p>
+          <p class="description">Minimalist fan</p>
+          <div class="price">
+            <p class="price-offer">L.E 500</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=4'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="product-item"
+          data-product-id="5"
+          data-category="lamps"
+          data-material="metal"
+          data-color="white"
+          data-rating="3stars"
+          data-availability="inStock"
+          data-price="1500"
+          data-width="20"
+          data-height="50"
+          data-depth="20"
+        >
+          <img src="./assets/product-5.webp" alt="Syltherine" />
+          <p class="title">Grifo</p>
+          <p class="description">Night lamp</p>
+          <div class="price">
+            <p class="price-offer">L.E 1,500</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=5'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="product-item"
+          data-product-id="6"
+          data-category="mugs"
+          data-material="ceramic"
+          data-color="white"
+          data-rating="4stars"
+          data-availability="inStock"
+          data-price="150"
+          data-width="10"
+          data-height="15"
+          data-depth="10"
+        >
+          <img src="./assets/product-6.webp" alt="Syltherine" />
+          <div class="new"><p>New</p></div>
+          <p class="title">Muggo</p>
+          <p class="description">Small mug</p>
+          <div class="price">
+            <p class="price-offer">L.E 150</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=6'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="product-item"
+          data-product-id="7"
+          data-category="beds"
+          data-material="wood"
+          data-color="pink"
+          data-rating="4stars"
+          data-availability="inStock"
+          data-price="7000"
+          data-width="160"
+          data-height="200"
+          data-depth="50"
+        >
+          <img src="./assets/product-7.webp" alt="Syltherine" />
+          <div class="offer"><p>-50%</p></div>
+          <p class="title">Pinkgy</p>
+          <p class="description">Cute bed set</p>
+          <div class="price">
+            <p class="price-offer">L.E 7,000</p>
+            <p class="price-no-offer">L.E 14,000</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=7'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="product-item"
+          data-product-id="8"
+          data-category="pots"
+          data-material="ceramic"
+          data-color="white"
+          data-rating="4stars"
+          data-availability="inStock"
+          data-price="500"
+          data-width="20"
+          data-height="25"
+          data-depth="20"
+        >
+          <img src="./assets/product-8.webp" alt="Syltherine" />
+          <div class="new"><p>New</p></div>
+          <p class="title">Potty</p>
+          <p class="description">Minimalist flower pot</p>
+          <div class="price">
+            <p class="price-offer">L.E 500</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=8'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- HTML for the share notification -->
+    <div id="share-notification">
+      <p>Link copied to clipboard!</p>
+    </div>
+    <script src="./script.js"></script>
+    <script src="./script-filter.js"></script>
+  </body>
+</html>
