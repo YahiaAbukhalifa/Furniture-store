@@ -161,19 +161,340 @@
       </div>
       <div class="details">
         <p class="title"></p>
-        <div class="rating"></div>
+        <div class="rating">(9,999)</div>
         <p class="price"></p>
         <p class="description"></p>
-        <p class="title-colors">Colors:</p>
-        <div class="colors"></div>
-        <div class="buttons">
-          <button class="add-to-cart">Add to cart</button>
-          <button class="wishlist"><i class="fa-regular fa-heart"></i></button>
+        <div class="dimensions">
+          <h3>Dimensions</h3>
+          <div class="dimension-box">
+            <p>Width: <span class="width"></span></p>
+            <p>Height: <span class="height"></span></p>
+            <p>Depth: <span class="depth"></span></p>
+          </div>
+        </div>      
+        <div>
+          <p class="title-colors">Colors:</p>
+          <div class="colors"></div>
         </div>
-        <button class="buyNow">Buy now!</button>
+        <div style="width: 100%;">
+          <div class="buttons">
+            <button class="add-to-cart">Add to cart</button>
+            <button class="wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <button class="buyNow">Buy now!</button>
+        </div>
       </div>
     </div>
-
+    <div class="relatedproducts">
+      <p class="title">Related Products</p>
+      <div class="products-container" id="products-container">
+        <div
+          class="product-item"
+          data-product-id="1"
+          data-category="sofas"
+          data-material="fabric"
+          data-color="grey"
+          data-rating="4stars"
+          data-availability="inStock"
+          data-price="2500"
+          data-width="50"
+          data-height="80"
+          data-depth="40"
+        >
+          <img src="./assets/product1.webp" alt="Syltherine" />
+          <div class="offer"><p>-30%</p></div>
+          <p class="title">Syltherine</p>
+          <p class="description">Stylish cafe chair</p>
+          <div class="price">
+            <p class="price-offer">L.E 2,500</p>
+            <p class="price-no-offer">L.E 3,000</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=1'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+  
+        <div 
+          class="product-item"
+          data-product-id="2"
+          data-category="chairs"
+          data-material="fabric"
+          data-color="grey"
+          data-rating="3stars"
+          data-availability="inStock"
+          data-price="2500"
+          data-width="45"
+          data-height="75"
+          data-depth="35"
+        >
+          <img src="./assets/product-2.webp" alt="Leviosa" />
+          <p class="title">Leviosa</p>
+          <p class="description">Stylish cafe chair</p>
+          <div class="price">
+            <p class="price-offer">L.E 2,500</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=2'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+        <div
+          class="product-item"
+          data-product-id="3"
+          data-category="sofas"
+          data-material="fabric"
+          data-color="grey"
+          data-rating="4stars"
+          data-availability="inStock"
+          data-price="7000"
+          data-width="70"
+          data-height="90"
+          data-depth="50"
+        >
+          <img src="./assets/product-3.webp" alt="Lolita" />
+          <div class="offer"><p>-50%</p></div>
+          <p class="title">Lolita</p>
+          <p class="description">Luxury big sofa</p>
+          <div class="price">
+            <p class="price-offer">L.E 7,000</p>
+            <p class="price-no-offer">L.E 14,000</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=3'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+        <div class="view-more-suggest" id="view-more-suggest">
+          <button id="show-more-products" onclick="showMoreProducts()">></button>
+        </div>
+        <div
+          class="product-item hidden"
+          data-product-id="4"
+          data-category="fans"
+          data-material="metal"
+          data-color="white"
+          data-rating="4stars"
+          data-availability="preOrder"
+          data-price="500"
+          data-width="30"
+          data-height="40"
+          data-depth="20"
+        >
+          <img src="./assets/product-4.webp" alt="Respira" />
+          <div class="new"><p>New</p></div>
+          <p class="title">Respira</p>
+          <p class="description">Minimalist fan</p>
+          <div class="price">
+            <p class="price-offer">L.E 500</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=4'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+  
+        <div
+          class="product-item hidden"
+          data-product-id="5"
+          data-category="lamps"
+          data-material="metal"
+          data-color="white"
+          data-rating="3stars"
+          data-availability="inStock"
+          data-price="1500"
+          data-width="20"
+          data-height="50"
+          data-depth="20"
+        >
+          <img src="./assets/product-5.webp" alt="Grifo" />
+          <p class="title">Grifo</p>
+          <p class="description">Night lamp</p>
+          <div class="price">
+            <p class="price-offer">L.E 1,500</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=5'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+  
+        <div
+          class="product-item hidden"
+          data-product-id="6"
+          data-category="mugs"
+          data-material="ceramic"
+          data-color="white"
+          data-rating="4stars"
+          data-availability="inStock"
+          data-price="150"
+          data-width="10"
+          data-height="15"
+          data-depth="10"
+        >
+          <img src="./assets/product-6.webp" alt="Muggo" />
+          <div class="new"><p>New</p></div>
+          <p class="title">Muggo</p>
+          <p class="description">Small mug</p>
+          <div class="price">
+            <p class="price-offer">L.E 150</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=6'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+  
+        <div
+          class="product-item hidden"
+          data-product-id="7"
+          data-category="beds"
+          data-material="wood"
+          data-color="pink"
+          data-rating="4stars"
+          data-availability="inStock"
+          data-price="7000"
+          data-width="160"
+          data-height="200"
+          data-depth="50"
+        >
+          <img src="./assets/product-7.webp" alt="Pinkgy" />
+          <div class="offer"><p>-50%</p></div>
+          <p class="title">Pinkgy</p>
+          <p class="description">Cute bed set</p>
+          <div class="price">
+            <p class="price-offer">L.E 7,000</p>
+            <p class="price-no-offer">L.E 14,000</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=7'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+  
+        <div
+          class="product-item hidden"
+          data-product-id="8"
+          data-category="pots"
+          data-material="ceramic"
+          data-color="white"
+          data-rating="4stars"
+          data-availability="inStock"
+          data-price="500"
+          data-width="20"
+          data-height="25"
+          data-depth="20"
+        >
+          <img src="./assets/product-8.webp" alt="Potty" />
+          <div class="new"><p>New</p></div>
+          <p class="title">Potty</p>
+          <p class="description">Minimalist flower pot</p>
+          <div class="price">
+            <p class="price-offer">L.E 500</p>
+          </div>
+          <div class="hover-effect">
+            <button class="add-to-cart">Add to cart</button>
+            <div class="actions">
+              <div>
+                <span class="material-symbols-outlined">share</span>
+                <p>share</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <p>Like</p>
+              </div>
+            </div>
+            <p class="view-more" onclick="location.href='./product-info.html?id=8'" style="margin-top: 15px;">
+              view more details<i class="fa-solid fa-angles-right"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./script.js"></script>
     <script src="./script-product.js"></script>
   </body>
