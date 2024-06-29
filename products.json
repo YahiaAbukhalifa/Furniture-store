@@ -14,8 +14,14 @@
       "title": "Syltherine",
       "description": "Stylish cafe chair",
       "priceOffer": "2500",
+      "ratingCount": "9,999",
       "priceNoOffer": "3000",
-      "colors": ["blue", "black"]
+      "colors": ["blue", "black"],
+      "dimensions": {
+        "width": "50cm",
+        "height": "30cm",
+        "depth": "20cm"
+      }
     },
     {
       "id": "2",
@@ -26,6 +32,7 @@
       "availability": "inStock",
       "price": "2500",
       "width": "45",
+      "ratingCount": "9,999",
       "height": "75",
       "depth": "35",
       "image": "./assets/product-2.webp",
@@ -33,13 +40,19 @@
       "description": "Stylish cafe chair",
       "priceOffer": "2500",
       "priceNoOffer": "",
-      "colors": ["white" , "black"]
+      "colors": ["white" , "black"],
+      "dimensions": {
+        "width": "50cm",
+        "height": "30cm",
+        "depth": "20cm"
+      }
     },
     {
       "id": "3",
       "category": "sofas",
       "material": "fabric",
       "color": "grey",
+      "ratingCount": "9,999",
       "rating": "4stars",
       "availability": "inStock",
       "price": "7000",
@@ -51,13 +64,19 @@
       "description": "Luxury big sofa",
       "priceOffer": "7000",
       "priceNoOffer": "14000",
-      "colors": ["pink","white"]
+      "colors": ["pink","white"],
+      "dimensions": {
+        "width": "50cm",
+        "height": "30cm",
+        "depth": "20cm"
+      }
     },
     {
       "id": "4",
       "category": "fans",
       "material": "metal",
       "color": "white",
+      "ratingCount": "9,999",
       "rating": "4.5stars",
       "availability": "preOrder",
       "price": "500",
@@ -69,7 +88,12 @@
       "description": "Minimalist fan",
       "priceOffer": "500",
       "priceNoOffer": "",
-      "colors": ["white" , "black"]
+      "colors": ["white" , "black"],
+      "dimensions": {
+        "width": "50cm",
+        "height": "30cm",
+        "depth": "20cm"
+      }
     },
     {
       "id": "5",
@@ -77,6 +101,7 @@
       "material": "metal",
       "color": "white",
       "rating": "3stars",
+      "ratingCount": "9,999",
       "availability": "inStock",
       "price": "1500",
       "width": "20",
@@ -87,7 +112,12 @@
       "description": "Night lamp",
       "priceOffer": "1500",
       "priceNoOffer": "",
-      "colors": ["white" , "black"]
+      "colors": ["white" , "black"],
+      "dimensions": {
+        "width": "50cm",
+        "height": "30cm",
+        "depth": "20cm"
+      }
     },
     {
       "id": "6",
@@ -98,6 +128,7 @@
       "availability": "inStock",
       "price": "150",
       "width": "10",
+      "ratingCount": "9,999",
       "height": "15",
       "depth": "10",
       "image": "./assets/product-6.webp",
@@ -105,7 +136,12 @@
       "description": "Small mug",
       "priceOffer": "150",
       "priceNoOffer": "",
-      "colors": ["white" , "black"]
+      "colors": ["white" , "black"],
+      "dimensions": {
+        "width": "50cm",
+        "height": "30cm",
+        "depth": "20cm"
+      }
     },
     {
       "id": "7",
@@ -118,12 +154,18 @@
       "width": "160",
       "height": "200",
       "depth": "50",
+      "ratingCount": "9,999",
       "image": "./assets/product-7.webp",
       "title": "Pinkgy",
       "description": "Cute bed set",
       "priceOffer": "7000",
       "priceNoOffer": "14000",
-      "colors": ["white" , "black"]
+      "colors": ["white" , "black"],
+      "dimensions": {
+        "width": "50cm",
+        "height": "30cm",
+        "depth": "20cm"
+      }
     },
     {
       "id": "8",
@@ -133,6 +175,7 @@
       "rating": "4stars",
       "availability": "inStock",
       "price": "500",
+      "ratingCount": "9,999",
       "width": "20",
       "height": "25",
       "depth": "20",
@@ -141,7 +184,12 @@
       "description": "Minimalist flower pot",
       "priceOffer": "500",
       "priceNoOffer": "",
-      "colors": ["white" , "black"]
+      "colors": ["white" , "black"],
+      "dimensions": {
+        "width": "50cm",
+        "height": "30cm",
+        "depth": "20cm"
+      }
     }
   ]
   
