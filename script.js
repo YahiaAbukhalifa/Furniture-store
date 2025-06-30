@@ -121,7 +121,7 @@ function updateWishlist() {
 
     function renderWishlist() {
         wishlistSubset.innerHTML = wishlist.map(item => `
-            <div class="wishlist-item" onclick="location.href='./product-info.html?id=${item.id}'">
+            <div class="wishlist-item">
                 <img src="${item.img}" alt="${item.title}">
                 <p>${item.title}</p>
                 <span class="remove" data-title="${item.title}">×</span>
