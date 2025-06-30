@@ -1,1 +1,131 @@
-document.addEventListener("DOMContentLoaded",function(){let e=document.querySelectorAll("input[name='category'], input[name='material'], input[name='color'], input[name='rating'], input[name='availability'], #priceRange, #width, #height, #depth");document.getElementById("minPrice");let t=document.getElementById("maxPrice"),i=document.getElementById("priceRange");document.getElementById("products-container");let n=document.querySelectorAll(".product-item");function a(){let e=l("category"),t=l("material"),a=l("color"),d=l("rating"),r=l("availability"),c=i.value,o={width:document.getElementById("width").value,height:document.getElementById("height").value,depth:document.getElementById("depth").value};n.forEach(i=>{var n;let l=(n=i,{category:n.dataset.category,material:n.dataset.material,color:n.dataset.color,rating:n.dataset.rating,availability:n.dataset.availability,price:parseInt(n.dataset.price,10),dimensions:{width:n.dataset.width,height:n.dataset.height,depth:n.dataset.depth}}),h=function e(t,i){let{selectedCategories:n,selectedMaterials:a,selectedColors:l,selectedRatings:d,selectedAvailability:r,selectedPrice:c,selectedDimensions:o}=i;return(0===n.length||n.includes(t.category))&&(0===a.length||a.includes(t.material))&&(0===l.length||l.includes(t.color))&&(0===d.length||d.includes(t.rating))&&(0===r.length||r.includes(t.availability))&&t.price<=c&&(!o.width||t.dimensions.width<=o.width)&&(!o.height||t.dimensions.height<=o.height)&&(!o.depth||t.dimensions.depth<=o.depth)}(l,{selectedCategories:e,selectedMaterials:t,selectedColors:a,selectedRatings:d,selectedAvailability:r,selectedPrice:c,selectedDimensions:o});i.style.display=h?"":"none"})}function l(e){return Array.from(document.querySelectorAll(`input[name='${e}']:checked`)).map(e=>e.id)}e.forEach(e=>{e.addEventListener("change",a)}),i.addEventListener("input",function(){t.textContent=`$${i.value}`,a()})}),document.addEventListener("DOMContentLoaded",function(){let e=document.querySelector(".filter-title"),t=document.querySelector(".filters");e&&t&&e.addEventListener("click",function(){t.classList.toggle("show-filters")})});
+document.addEventListener("DOMContentLoaded", function () {
+  let filterInputs = document.querySelectorAll("input[name='category'], input[name='material'], input[name='color'], input[name='rating'], input[name='availability'], #priceRange, #width, #height, #depth");
+  let minPriceElement = document.getElementById("minPrice");
+  let maxPriceElement = document.getElementById("maxPrice");
+  let priceRangeElement = document.getElementById("priceRange");
+  let productsContainer = document.getElementById("products-container");
+  let productItems = document.querySelectorAll(".product-item");
+
+  // Parse URL parameters
+  function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+
+  // Apply category filter from URL on page load
+  function applyUrlCategoryFilter() {
+    const category = getUrlParameter('category');
+    if (category) {
+      const categoryInput = document.querySelector(`input[name='category'][id='${category}']`);
+      if (categoryInput) {
+        categoryInput.checked = true;
+        filterProducts();
+      }
+    }
+  }
+
+  function filterProducts() {
+    let selectedCategories = getSelectedFilters("category");
+    let selectedMaterials = getSelectedFilters("material");
+    let selectedColors = getSelectedFilters("color");
+    let selectedRatings = getSelectedFilters("rating");
+    let selectedAvailability = getSelectedFilters("availability");
+    let selectedPrice = priceRangeElement.value;
+    let selectedDimensions = {
+      width: document.getElementById("width").value,
+      height: document.getElementById("height").value,
+      depth: document.getElementById("depth").value
+    };
+
+    productItems.forEach((productItem) => {
+      let productData = {
+        category: productItem.dataset.category,
+        material: productItem.dataset.material,
+        color: productItem.dataset.color,
+        rating: productItem.dataset.rating,
+        availability: productItem.dataset.availability,
+        price: parseInt(productItem.dataset.price, 10),
+        dimensions: {
+          width: productItem.dataset.width,
+          height: productItem.dataset.height,
+          depth: productItem.dataset.depth
+        }
+      };
+
+      let isVisible = isProductVisible(productData, {
+        selectedCategories,
+        selectedMaterials,
+        selectedColors,
+        selectedRatings,
+        selectedAvailability,
+        selectedPrice,
+        selectedDimensions
+      });
+
+      productItem.style.display = isVisible ? "" : "none";
+    });
+  }
+
+  function getSelectedFilters(filterName) {
+    return Array.from(document.querySelectorAll(`input[name='${filterName}']:checked`)).map((input) => input.id);
+  }
+
+  function isProductVisible(productData, selectedFilters) {
+    let {
+      selectedCategories,
+      selectedMaterials,
+      selectedColors,
+      selectedRatings,
+      selectedAvailability,
+      selectedPrice,
+      selectedDimensions
+    } = selectedFilters;
+
+    return (
+      (selectedCategories.length === 0 || selectedCategories.includes(productData.category)) &&
+      (selectedMaterials.length === 0 || selectedMaterials.includes(productData.material)) &&
+      (selectedColors.length === 0 || selectedColors.includes(productData.color)) &&
+      (selectedRatings.length === 0 || selectedRatings.includes(productData.rating)) &&
+      (selectedAvailability.length === 0 || selectedAvailability.includes(productData.availability)) &&
+      productData.price <= selectedPrice &&
+      (!selectedDimensions.width || productData.dimensions.width <= selectedDimensions.width) &&
+      (!selectedDimensions.height || productData.dimensions.height <= selectedDimensions.height) &&
+      (!selectedDimensions.depth || productData.dimensions.height <= selectedDimensions.depth)
+    );
+  }
+
+  filterInputs.forEach((input) => {
+    input.addEventListener("change", filterProducts);
+  });
+
+  priceRangeElement.addEventListener("input", function () {
+    maxPriceElement.textContent = `$${priceRangeElement.value}`;
+    filterProducts();
+  });
+
+  // Cart counter update on page load and storage change
+  function updateCartCounter() {
+    let cartCounter = document.getElementById("cart-counter");
+    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    cartCounter.textContent = cartItems.length;
+  }
+
+  window.addEventListener('storage', function (event) {
+    if (event.key === 'cart') {
+      updateCartCounter();
+    }
+  });
+
+  let filterTitle = document.querySelector(".filter-title");
+  let filtersContainer = document.querySelector(".filters");
+
+  if (filterTitle && filtersContainer) {
+    filterTitle.addEventListener("click", function () {
+      filtersContainer.classList.toggle("show-filters");
+    });
+  }
+
+  // Apply URL filter and update cart counter on page load
+  applyUrlCategoryFilter();
+  updateCartCounter();
+});

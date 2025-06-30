@@ -2,30 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Furniture Store | High-Quality Furniture Online</title>
 
     <!-- SEO Metadata -->
-    <meta name="description" content="Discover high-quality furniture for your home at our store. Shop sofas, chairs, tables, beds, and more. Enjoy free shipping on orders over $150." />
-    <meta name="keywords" content="furniture, online furniture store, sofas, chairs, tables, beds, home decor" />
+    <meta
+      name="description"
+      content="Discover high-quality furniture for your home at our store. Shop sofas, chairs, tables, beds, and more. Enjoy free shipping on orders over $150."
+    />
+    <meta
+      name="keywords"
+      content="furniture, online furniture store, sofas, chairs, tables, beds, home decor"
+    />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Funiro" />
 
     <!-- Open Graph Metadata -->
-    <meta property="og:title" content="Furniture Store | High-Quality Furniture Online" />
-    <meta property="og:description" content="Discover high-quality furniture for your home at our store. Shop sofas, chairs, tables, beds, and more." />
-    <meta property="og:image" content="https://github.com/YahiaAbukhalifa/Furniture-store/assets/logo.png"/>
-    <meta property="og:url" content="https://yahiaabukhalifa.github.io/Furniture-store/" />
+    <meta
+      property="og:title"
+      content="Furniture Store | High-Quality Furniture Online"
+    />
+    <meta
+      property="og:description"
+      content="Discover high-quality furniture for your home at our store. Shop sofas, chairs, tables, beds, and more."
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/YahiaAbukhalifa/Furniture-store/assets/logo.png"
+    />
+    <meta
+      property="og:url"
+      content="https://yahiaabukhalifa.github.io/Furniture-store/"
+    />
     <meta property="og:type" content="website" />
 
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./style-shop.css" />
     <link rel="stylesheet" href="./product-info.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -35,11 +63,7 @@
         "name": "Funiro",
         "url": "https://yahiaabukhalifa.github.io/Furniture-store/",
         "logo": "https://github.com/YahiaAbukhalifa/Furniture-store/assets/logo.png",
-        "sameAs": [
-          "facebook.com",
-          "https://x.com/",
-          "instagram.com"
-        ]
+        "sameAs": ["facebook.com", "https://x.com/", "instagram.com"]
       }
     </script>
 
@@ -58,98 +82,132 @@
   </head>
   <body>
     <div id="loader"></div>
-    <!-- navbar -->
+
     <div class="mainHeader">
       <div class="left">
-        <a class="logo" href="./index.html">LOGO</a>
+        <a href="./index.html"><p class="logo" data-i18n="logo">LOGO</p></a>
         <a class="products" href="./shop.html"
-          >products <i class="fa-solid fa-caret-down"></i>
+          ><span data-i18n="products-nav">products</span>
+          <i class="fa-solid fa-caret-down"></i>
           <div class="products-full">
             <ul class="submenu">
-              <li>Sofa</li>
-              <li>Loveseat</li>
-              <li>Armchair</li>
-              <li>Recliner</li>
-              <li>Sectional Sofa</li>
-              <li>Coffee Table</li>
-              <li>End Table</li>
-              <li>Console Table</li>
-              <li>TV Stand</li>
-              <li>Dining Table</li>
-              <li>Dining Chair</li>
-              <li>Bed</li>
-              <li>Dresser</li>
-              <li>Nightstand</li>
-              <li>Desk</li>
+              <li data-i18n="Sofa">Sofa</li>
+              <li data-i18n="Loveseat">Loveseat</li>
+              <li data-i18n="Armchair">Armchair</li>
+              <li data-i18n="Recliner">Recliner</li>
+              <li data-i18n="Coffee Table">Coffee Table</li>
+              <li data-i18n="TV Stand">TV Stand</li>
+              <li data-i18n="Dining Table">Dining Table</li>
+              <li data-i18n="Dining Chair">Dining Chair</li>
+              <li data-i18n="Bed">Bed</li>
+              <li data-i18n="Dresser">Dresser</li>
+              <li data-i18n="Nightstand">Nightstand</li>
+              <li data-i18n="Desk">Desk</li>
             </ul>
           </div>
         </a>
         <a class="rooms" href="#rooms"
-          >rooms <i class="fa-solid fa-caret-down"></i>
+          ><span data-i18n="rooms-nav">rooms</span>
+          <i class="fa-solid fa-caret-down"></i>
           <div class="rooms-full">
             <ul class="submenu">
-              <li>Living Room Furniture</li>
-              <li>Bedroom Furniture</li>
-              <li>Dining Room Furniture</li>
-              <li>Kitchen Furniture</li>
-              <li>Home Office Furniture</li>
-              <li>Outdoor Furniture</li>
+              <li data-i18n="living">Living Room Furniture</li>
+              <li data-i18n="bedroom">Bedroom Furniture</li>
+              <li data-i18n="dining">Dining Room Furniture</li>
+              <li data-i18n="kitchen">Kitchen Furniture</li>
+              <li data-i18n="office">Home Office Furniture</li>
+              <li data-i18n="outdoor">Outdoor Furniture</li>
             </ul>
           </div>
         </a>
-        <div style="position: relative;width: 40%;">
+        <div style="position: relative; width: 40%">
           <input
-          type="text"
-          name="search"
-          id="search"
-          placeholder="Search for what you want"
-          oninput="filterProducts()"
-        />
-        <div id="search-results" class="search-container"></div>
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search for what you want"
+            oninput="filterProducts()"
+            data-i18n="search-products"
+          />
+          <div id="search-results" class="search-container"></div>
         </div>
       </div>
       <div class="right">
-        <a href="javascript:void(0)" id="wishlist-icon"><i class="fa-regular fa-heart"></i></a>
-        <a href="javascript:void(0)" onclick="toggleCart()" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
-        <img src="./assets/personalimg.webp" alt="User image" class="profile" />
+        <a href="javascript:void(0)" id="wishlist-icon"
+          ><i class="fa-regular fa-heart"></i
+        ></a>
+        <div class="cart-container">
+          <a
+            href="javascript:void(0)"
+            onclick="toggleCart()"
+            class="cart-icon"
+            id="cart-icon"
+            ><i class="fa-solid fa-cart-shopping"></i
+          ></a>
+          <div class="cart-counter" id="cart-counter">0</div>
+        </div>
+        <div class="select-container">
+          <select name="lang-selector" id="lang-selector">
+            <option value="en" selected>English</option>
+            <option value="ar">العربية</option>
+          </select>
+        </div>
         <div id="wishlist-subset" class="wishlist-subset"></div>
         <div id="cart-items"></div>
-      </div>        
+      </div>
       <div id="mobie-nav">
-        <nav id='menu'>
-          <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+        <nav id="menu">
+          <input
+            type="checkbox"
+            id="responsive-menu"
+            onclick="updatemenu()"
+          /><label></label>
           <ul>
-            <li><a href='./index.html'>Home</a></li>
-            <li><a class='dropdown-arrow' href='#'>Products</a>
-              <ul class='sub-menus'>
-                <li><a href="./shop.html">Sofa</a></li>
-                <li><a href="./shop.html">Loveseat</a></li>
-                <li><a href="./shop.html">Armchair</a></li>
-                <li><a href="./shop.html">Recliner</a></li>
-                <li><a href="./shop.html">Sectional Sofa</a></li>
-                <li><a href="./shop.html">Coffee Table</a></li>
-                <li><a href="./shop.html">End Table</a></li>
-                <li><a href="./shop.html">Console Table</a></li>
-                <li><a href="./shop.html">TV Stand</a></li>
-                <li><a href="./shop.html">Dining Table</a></li>
-                <li><a href="./shop.html">Dining Chair</a></li>
-                <li><a href="./shop.html">Bed</a></li>
-                <li><a href="./shop.html">Dresser</a></li>
-                <li><a href="./shop.html">Nightstand</a></li>
-                <li><a href="./shop.html">Desk</a></li>
+            <li><a href="./index.html" data-i18n="home">Home</a></li>
+            <li>
+              <a class="dropdown-arrow" href="#" data-i18n="products-nav"
+                >Products</a
+              >
+              <ul class="sub-menus">
+                <li><a href="./shop.html" data-i18n="Sofa">Sofa</a></li>
+                <li><a href="./shop.html" data-i18n="Loveseat">Loveseat</a></li>
+                <li><a href="./shop.html" data-i18n="Armchair">Armchair</a></li>
+                <li><a href="./shop.html" data-i18n="TV Stand">TV Stand</a></li>
+                <li>
+                  <a href="./shop.html" data-i18n="Dining Table"
+                    >Dining Table</a
+                  >
+                </li>
+                <li>
+                  <a href="./shop.html" data-i18n="Dining Chair"
+                    >Dining Chair</a
+                  >
+                </li>
+                <li><a href="./shop.html" data-i18n="Bed">Bed</a></li>
+                <li><a href="./shop.html" data-i18n="Dresser">Dresser</a></li>
+                <li>
+                  <a href="./shop.html" data-i18n="Nightstand">Nightstand</a>
+                </li>
+                <li><a href="./shop.html" data-i18n="Desk">Desk</a></li>
               </ul>
             </li>
-            <li><a class='dropdown-arrow' href='#'>rooms</a>
-              <ul class='sub-menus'>
-                <li><a href="./shop.html">Living Room</a></li>
-                <li><a href="./shop.html">Bedroom</a></li>
-                <li><a href="./shop.html">Dining Room</a></li>
-                <li><a href="./shop.html">Kitchen</a></li>
-                <li><a href="./shop.html">Home Office</a></li>
-                <li><a href="./shop.html">Outdoor</a></li>
+            <li>
+              <a class="dropdown-arrow" href="#" data-i18n="rooms-nav">rooms</a>
+              <ul class="sub-menus">
+                <li>
+                  <a href="./shop.html" data-i18n="living">Living Room</a>
+                </li>
+                <li><a href="./shop.html" data-i18n="bedroom">Bedroom</a></li>
+                <li>
+                  <a href="./shop.html" data-i18n="dining">Dining Room</a>
+                </li>
+                <li><a href="./shop.html" data-i18n="kitchen">Kitchen</a></li>
+                <li>
+                  <a href="./shop.html" data-i18n="office">Home Office</a>
+                </li>
+                <li><a href="./shop.html" data-i18n="outdoor">Outdoor</a></li>
               </ul>
             </li>
-            <li><a href='#'>Contact Us</a></li>
           </ul>
         </nav>
       </div>
@@ -165,28 +223,30 @@
         <p class="price"></p>
         <p class="description"></p>
         <div class="dimensions">
-          <h3>Dimensions</h3>
+          <h3 data-i18n="dimensions">Dimensions</h3>
           <div class="dimension-box">
-            <p>Width: <span class="width"></span></p>
-            <p>Height: <span class="height"></span></p>
-            <p>Depth: <span class="depth"></span></p>
+            <p><span data-i18n="widthLabel">Width:</span> <span class="width"></span></p>
+            <p><span  data-i18n="heightLabel">Height:</span> <span class="height"></span></p>
+            <p><span data-i18n="depthLabel">Depth:</span> <span class="depth"></span></p>
           </div>
         </div>      
         <div>
-          <p class="title-colors">Colors:</p>
+          <p class="title-colors"><span data-i18n="colorsTitle">Colors:</span></p>
           <div class="colors"></div>
         </div>
         <div style="width: 100%;">
           <div class="buttons">
-            <button class="add-to-cart">Add to cart</button>
-            <button class="wishlist"><i class="fa-regular fa-heart"></i></button>
+            <button class="add-to-cart" data-i18n="addToCart">Add to cart</button>
+            <button class="wishlist" data-i18n="wishlist"><i class="fa-regular fa-heart"></i></button>
           </div>
-          <button class="buyNow">Buy now!</button>
+          <button class="buyNow" data-i18n="buyNow">Buy now!</button>
         </div>
       </div>
     </div>
+    
+
     <div class="relatedproducts">
-      <p class="title">Related Products</p>
+      <p class="title" data-i18n="title-section-related">Related Products</p>
       <div class="products-container" id="products-container">
         <div
           class="product-item"
@@ -203,31 +263,40 @@
         >
           <img src="./assets/product1.webp" alt="Syltherine" />
           <div class="offer"><p>-30%</p></div>
-          <p class="title">Syltherine</p>
-          <p class="description">Stylish cafe chair</p>
+          <p class="title" data-i18n="title-products-1">Syltherine</p>
+          <p class="description" data-i18n="desc-products-1">
+            Stylish cafe chair
+          </p>
           <div class="price">
             <p class="price-offer">L.E 2,500</p>
             <p class="price-no-offer">L.E 3,000</p>
           </div>
           <div class="hover-effect">
-            <button class="add-to-cart">Add to cart</button>
+            <button class="add-to-cart" data-i18n="cart-products">
+              Add to cart
+            </button>
             <div class="actions">
               <div>
                 <span class="material-symbols-outlined">share</span>
-                <p>share</p>
+                <p data-i18n="share-products">share</p>
               </div>
               <div>
                 <i class="fa-regular fa-heart"></i>
-                <p>Like</p>
+                <p data-i18n="like-products">Like</p>
               </div>
             </div>
-            <p class="view-more" onclick="location.href='./product-info.html?id=1'" style="margin-top: 15px;">
+            <p
+              class="view-more"
+              onclick="location.href='./product-info.html?id=1'"
+              style="margin-top: 15px"
+              data-i18n="view-more-products"
+            >
               view more details<i class="fa-solid fa-angles-right"></i>
             </p>
           </div>
         </div>
-  
-        <div 
+
+        <div
           class="product-item"
           data-product-id="2"
           data-category="chairs"
@@ -241,28 +310,38 @@
           data-depth="35"
         >
           <img src="./assets/product-2.webp" alt="Leviosa" />
-          <p class="title">Leviosa</p>
-          <p class="description">Stylish cafe chair</p>
+          <p class="title" data-i18n="title-products-2">Leviosa</p>
+          <p class="description" data-i18n="desc-products-2">
+            Stylish cafe chair
+          </p>
           <div class="price">
             <p class="price-offer">L.E 2,500</p>
           </div>
           <div class="hover-effect">
-            <button class="add-to-cart">Add to cart</button>
+            <button class="add-to-cart" data-i18n="cart-products">
+              Add to cart
+            </button>
             <div class="actions">
               <div>
                 <span class="material-symbols-outlined">share</span>
-                <p>share</p>
+                <p data-i18n="share-products">share</p>
               </div>
               <div>
                 <i class="fa-regular fa-heart"></i>
-                <p>Like</p>
+                <p data-i18n="like-products">Like</p>
               </div>
             </div>
-            <p class="view-more" onclick="location.href='./product-info.html?id=2'" style="margin-top: 15px;">
+            <p
+              class="view-more"
+              onclick="location.href='./product-info.html?id=2'"
+              style="margin-top: 15px"
+              data-i18n="view-more-products"
+            >
               view more details<i class="fa-solid fa-angles-right"></i>
             </p>
           </div>
         </div>
+
         <div
           class="product-item"
           data-product-id="3"
@@ -278,32 +357,43 @@
         >
           <img src="./assets/product-3.webp" alt="Lolita" />
           <div class="offer"><p>-50%</p></div>
-          <p class="title">Lolita</p>
-          <p class="description">Luxury big sofa</p>
+          <p class="title" data-i18n="title-products-3">Lolita</p>
+          <p class="description" data-i18n="desc-products-3">Luxury big sofa</p>
           <div class="price">
             <p class="price-offer">L.E 7,000</p>
             <p class="price-no-offer">L.E 14,000</p>
           </div>
           <div class="hover-effect">
-            <button class="add-to-cart">Add to cart</button>
+            <button class="add-to-cart" data-i18n="cart-products">
+              Add to cart
+            </button>
             <div class="actions">
               <div>
                 <span class="material-symbols-outlined">share</span>
-                <p>share</p>
+                <p data-i18n="share-products">share</p>
               </div>
               <div>
                 <i class="fa-regular fa-heart"></i>
-                <p>Like</p>
+                <p data-i18n="like-products">Like</p>
               </div>
             </div>
-            <p class="view-more" onclick="location.href='./product-info.html?id=3'" style="margin-top: 15px;">
+            <p
+              class="view-more"
+              onclick="location.href='./product-info.html?id=3'"
+              style="margin-top: 15px"
+              data-i18n="view-more-products"
+            >
               view more details<i class="fa-solid fa-angles-right"></i>
             </p>
           </div>
         </div>
+
         <div class="view-more-suggest" id="view-more-suggest">
-          <button id="show-more-products" onclick="showMoreProducts()">></button>
+          <button id="show-more-products" onclick="showMoreProducts()">
+            >
+          </button>
         </div>
+
         <div
           class="product-item hidden"
           data-product-id="4"
@@ -318,30 +408,37 @@
           data-depth="20"
         >
           <img src="./assets/product-4.webp" alt="Respira" />
-          <div class="new"><p>New</p></div>
-          <p class="title">Respira</p>
-          <p class="description">Minimalist fan</p>
+          <div class="new"><p data-i18n="new-products">New</p></div>
+          <p class="title" data-i18n="title-products-4">Respira</p>
+          <p class="description" data-i18n="desc-products-4">Minimalist fan</p>
           <div class="price">
             <p class="price-offer">L.E 500</p>
           </div>
           <div class="hover-effect">
-            <button class="add-to-cart">Add to cart</button>
+            <button class="add-to-cart" data-i18n="cart-products">
+              Add to cart
+            </button>
             <div class="actions">
               <div>
                 <span class="material-symbols-outlined">share</span>
-                <p>share</p>
+                <p data-i18n="share-products">share</p>
               </div>
               <div>
                 <i class="fa-regular fa-heart"></i>
-                <p>Like</p>
+                <p data-i18n="like-products">Like</p>
               </div>
             </div>
-            <p class="view-more" onclick="location.href='./product-info.html?id=4'" style="margin-top: 15px;">
+            <p
+              class="view-more"
+              onclick="location.href='./product-info.html?id=4'"
+              style="margin-top: 15px"
+              data-i18n="view-more-products"
+            >
               view more details<i class="fa-solid fa-angles-right"></i>
             </p>
           </div>
         </div>
-  
+
         <div
           class="product-item hidden"
           data-product-id="5"
@@ -356,29 +453,36 @@
           data-depth="20"
         >
           <img src="./assets/product-5.webp" alt="Grifo" />
-          <p class="title">Grifo</p>
-          <p class="description">Night lamp</p>
+          <p class="title" data-i18n="title-products-5">Grifo</p>
+          <p class="description" data-i18n="desc-products-5">Night lamp</p>
           <div class="price">
             <p class="price-offer">L.E 1,500</p>
           </div>
           <div class="hover-effect">
-            <button class="add-to-cart">Add to cart</button>
+            <button class="add-to-cart" data-i18n="cart-products">
+              Add to cart
+            </button>
             <div class="actions">
               <div>
                 <span class="material-symbols-outlined">share</span>
-                <p>share</p>
+                <p data-i18n="share-products">share</p>
               </div>
               <div>
                 <i class="fa-regular fa-heart"></i>
-                <p>Like</p>
+                <p data-i18n="like-products">Like</p>
               </div>
             </div>
-            <p class="view-more" onclick="location.href='./product-info.html?id=5'" style="margin-top: 15px;">
+            <p
+              class="view-more"
+              onclick="location.href='./product-info.html?id=5'"
+              style="margin-top: 15px"
+              data-i18n="view-more-products"
+            >
               view more details<i class="fa-solid fa-angles-right"></i>
             </p>
           </div>
         </div>
-  
+
         <div
           class="product-item hidden"
           data-product-id="6"
@@ -393,30 +497,37 @@
           data-depth="10"
         >
           <img src="./assets/product-6.webp" alt="Muggo" />
-          <div class="new"><p>New</p></div>
-          <p class="title">Muggo</p>
-          <p class="description">Small mug</p>
+          <div class="new"><p data-i18n="new-products">New</p></div>
+          <p class="title" data-i18n="title-products-6">Muggo</p>
+          <p class="description" data-i18n="desc-products-6">Small mug</p>
           <div class="price">
             <p class="price-offer">L.E 150</p>
           </div>
           <div class="hover-effect">
-            <button class="add-to-cart">Add to cart</button>
+            <button class="add-to-cart" data-i18n="cart-products">
+              Add to cart
+            </button>
             <div class="actions">
               <div>
                 <span class="material-symbols-outlined">share</span>
-                <p>share</p>
+                <p data-i18n="share-products">share</p>
               </div>
               <div>
                 <i class="fa-regular fa-heart"></i>
-                <p>Like</p>
+                <p data-i18n="like-products">Like</p>
               </div>
             </div>
-            <p class="view-more" onclick="location.href='./product-info.html?id=6'" style="margin-top: 15px;">
+            <p
+              class="view-more"
+              onclick="location.href='./product-info.html?id=6'"
+              style="margin-top: 15px"
+              data-i18n="view-more-products"
+            >
               view more details<i class="fa-solid fa-angles-right"></i>
             </p>
           </div>
         </div>
-  
+
         <div
           class="product-item hidden"
           data-product-id="7"
@@ -431,31 +542,38 @@
           data-depth="50"
         >
           <img src="./assets/product-7.webp" alt="Pinkgy" />
-          <div class="offer"><p>-50%</p></div>
-          <p class="title">Pinkgy</p>
-          <p class="description">Cute bed set</p>
+          <div class="offer"><p data-i18n="offer-products">-50%</p></div>
+          <p class="title" data-i18n="title-products-7">Pinkgy</p>
+          <p class="description" data-i18n="desc-products-7">Cute bed set</p>
           <div class="price">
             <p class="price-offer">L.E 7,000</p>
             <p class="price-no-offer">L.E 14,000</p>
           </div>
           <div class="hover-effect">
-            <button class="add-to-cart">Add to cart</button>
+            <button class="add-to-cart" data-i18n="cart-products">
+              Add to cart
+            </button>
             <div class="actions">
               <div>
                 <span class="material-symbols-outlined">share</span>
-                <p>share</p>
+                <p data-i18n="share-products">share</p>
               </div>
               <div>
                 <i class="fa-regular fa-heart"></i>
-                <p>Like</p>
+                <p data-i18n="like-products">Like</p>
               </div>
             </div>
-            <p class="view-more" onclick="location.href='./product-info.html?id=7'" style="margin-top: 15px;">
+            <p
+              class="view-more"
+              onclick="location.href='./product-info.html?id=7'"
+              style="margin-top: 15px"
+              data-i18n="view-more-products"
+            >
               view more details<i class="fa-solid fa-angles-right"></i>
             </p>
           </div>
         </div>
-  
+
         <div
           class="product-item hidden"
           data-product-id="8"
@@ -470,35 +588,42 @@
           data-depth="20"
         >
           <img src="./assets/product-8.webp" alt="Potty" />
-          <div class="new"><p>New</p></div>
-          <p class="title">Potty</p>
-          <p class="description">Minimalist flower pot</p>
+          <div class="new"><p data-i18n="new-products">New</p></div>
+          <p class="title" data-i18n="title-products-8">Potty</p>
+          <p class="description" data-i18n="desc-products-8">
+            Minimalist flower pot
+          </p>
           <div class="price">
             <p class="price-offer">L.E 500</p>
           </div>
           <div class="hover-effect">
-            <button class="add-to-cart">Add to cart</button>
+            <button class="add-to-cart" data-i18n="cart-products">
+              Add to cart
+            </button>
             <div class="actions">
               <div>
                 <span class="material-symbols-outlined">share</span>
-                <p>share</p>
+                <p data-i18n="share-products">share</p>
               </div>
               <div>
                 <i class="fa-regular fa-heart"></i>
-                <p>Like</p>
+                <p data-i18n="like-products">Like</p>
               </div>
             </div>
-            <p class="view-more" onclick="location.href='./product-info.html?id=8'" style="margin-top: 15px;">
+            <p
+              class="view-more"
+              onclick="location.href='./product-info.html?id=8'"
+              style="margin-top: 15px"
+              data-i18n="view-more-products"
+            >
               view more details<i class="fa-solid fa-angles-right"></i>
             </p>
           </div>
         </div>
       </div>
     </div>
-      <div id="share-notification">
-      <p>Link copied to clipboard!</p>
-    </div>
     <script src="./script.js"></script>
     <script src="./script-product.js"></script>
+    <script type="module" src="changelang.js"></script>
   </body>
 </html>

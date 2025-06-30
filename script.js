@@ -1,28 +1,292 @@
-let slideIndex=1;function autoSlides(){plusSlides(1)}function plusSlides(e){showSlides(slideIndex+=e)}function currentSlide(e){showSlides(slideIndex=e)}function showSlides(e){let t,i=document.getElementsByClassName("Slides"),r=document.getElementsByClassName("dot");if(0!==i.length&&0!==r.length){for(e>i.length&&(slideIndex=1),e<1&&(slideIndex=i.length),t=0;t<i.length;t++)i[t].style.display="none";for(t=0;t<r.length;t++)r[t].className=r[t].className.replace(" active","");i[slideIndex-1].style.display="block",r[slideIndex-1].className+=" active"}}function toggleCart(){document.getElementById("cart-items").classList.toggle("active")}function updatemenu(){!0==document.getElementById("responsive-menu").checked?(document.getElementById("menu").style.borderBottomRightRadius="0",document.getElementById("menu").style.borderBottomLeftRadius="0"):document.getElementById("menu").style.borderRadius="10px"}function filterProducts(){let e=document.getElementById("search").value.toLowerCase(),t=window.products.filter(t=>t.title.toLowerCase().includes(e)),i=document.getElementById("search-results");i.classList.add("flex"),i.innerHTML="",t.forEach(e=>{let t=document.createElement("div");t.classList.add("product-item"),t.innerHTML=`
-  <img src="${e.image}" alt="${e.title}" />
-  <p class="title">${e.title}</p>
-  <div class="price">
-    <p class="price-offer">L.E ${e.price}</p>
-  </div>
-`,t.addEventListener("mousedown",()=>{window.location.href=`./product-info.html?id=${e.id}`}),i.appendChild(t)})}function filterProductsMobile(){let e=document.getElementById("search-mobile").value.toLowerCase(),t=window.products.filter(t=>t.title.toLowerCase().includes(e)),i=document.getElementById("search-results");i.classList.add("flex"),i.innerHTML="",t.forEach(e=>{let t=document.createElement("div");t.classList.add("product-item"),t.innerHTML=`
-  <img src="${e.image}" alt="${e.title}" />
-  <p class="title">${e.title}</p>
-  <div class="price">
-    <p class="price-offer">L.E ${e.price}</p>
-  </div>
-`,t.addEventListener("mousedown",()=>{window.location.href=`./product-info.html?id=${e.id}`}),i.appendChild(t)})}function getQueryParam(e){return new URLSearchParams(window.location.search).get(e)}async function fetchProductData(e){try{let t=await fetch("./products.json");if(!t.ok)throw Error(`HTTP error! status: ${t.status}`);return(await t.json()).find(t=>t.id===e)}catch(i){console.error("Error fetching product data:",i)}}function displayProductData(e){if(!e){console.error("Product not found");return}document.querySelector(".image-preview img").src=e.image,document.querySelector(".details .title").textContent=e.title,document.querySelector(".details .price").textContent=`${e.price} L.E`;let t=document.querySelector(".details .rating");t.innerHTML="";let i=parseFloat(e.rating),r=Math.floor(i);for(let l=0;l<r;l++){let n=document.createElement("i");n.classList.add("fa-solid","fa-star","active-rate"),t.appendChild(n)}if(i%1>0){let s=document.createElement("i");s.classList.add("fa-solid","fa-star-half","active-rate"),t.appendChild(s)}let a=document.createElement("p");a.textContent=`(${e.rating})`,t.appendChild(a),document.querySelector(".details .description").textContent=e.description}showSlides(slideIndex),setInterval(autoSlides,5e3),document.addEventListener("DOMContentLoaded",e=>{document.querySelectorAll(".product-item").forEach(e=>{e.addEventListener("mouseenter",()=>{e.classList.add("w3-animate-opacity")}),e.addEventListener("mouseleave",()=>{e.classList.remove("w3-animate-opacity")})})}),document.addEventListener("DOMContentLoaded",()=>{let e=document.getElementById("wishlist-icon"),t=document.getElementById("wishlist-subset"),i=document.querySelectorAll(".product-item .fa-heart"),r=JSON.parse(localStorage.getItem("wishlist"))||[];function l(e){let t=e.closest(".product-item"),i={title:t.querySelector(".title").innerText,img:t.querySelector("img").src,description:t.querySelector(".description").innerText,price:t.querySelector(".price-offer").innerText||t.querySelector(".price").innerText},l=r.findIndex(e=>e.title===i.title);l>-1?(r.splice(l,1),e.classList.remove("liked")):(r.push(i),e.classList.add("liked")),localStorage.setItem("wishlist",JSON.stringify(r)),s()}function n(){r.forEach(e=>{let t=[...document.querySelectorAll(".product-item")].find(t=>t.querySelector(".title").innerText===e.title);t&&t.querySelector(".fa-heart").classList.add("liked")})}function s(){t.innerHTML=r.map(e=>`
-  <div class="wishlist-item">
-    <img src="${e.img}" alt="${e.title}">
-    <p>${e.title}</p>
-    <span class="remove" data-title="${e.title}">&times;</span>
-  </div>
-`).join(""),document.querySelectorAll(".wishlist-item .remove").forEach(e=>{e.addEventListener("click",e=>a(e.target.dataset.title))})}function a(e){let t=r.findIndex(t=>t.title===e);if(t>-1){r.splice(t,1),localStorage.setItem("wishlist",JSON.stringify(r)),s();let i=[...document.querySelectorAll(".product-item")].find(t=>t.querySelector(".title").innerText===e);i&&i.querySelector(".fa-heart").classList.remove("liked")}}s(),n(),i.forEach(e=>{e.addEventListener("click",()=>l(e))}),e&&e.addEventListener("click",()=>{t.classList.toggle("active")})}),document.addEventListener("DOMContentLoaded",()=>{let e=document.getElementById("cart-items"),t=document.querySelectorAll(".add-to-cart"),i=JSON.parse(localStorage.getItem("cart"))||[];function r(e){i.some(t=>t.id===e.id)||(i.push(e),localStorage.setItem("cart",JSON.stringify(i)),l())}function l(){e.innerHTML=i.map(e=>`
-  <div class="cart-item">
-    <img src="${e.img}" alt="${e.title}">
-    <div class="cart-item-details">
-      <p>${e.title}</p>
-      <p>${e.price}</p>
-    </div>
-    <span class="remove" data-id="${e.id}">&times;</span>
-  </div>
-`).join(""),document.querySelectorAll(".cart-item .remove").forEach(e=>{e.addEventListener("click",e=>n(e.target.dataset.id))})}function n(e){i=i.filter(t=>t.id!==e),localStorage.setItem("cart",JSON.stringify(i)),l()}t.forEach(e=>{e.addEventListener("click",()=>{let t=e.closest(".product-item");r({id:t.dataset.productId,title:t.querySelector(".title").innerText,img:t.querySelector("img").src,price:t.querySelector(".price-offer").innerText||t.querySelector(".price-no-offer").innerText})})}),l()}),document.addEventListener("mouseup",function(e){var t=document.getElementById("cart-items"),i=document.querySelector(".cart-icon");t.contains(e.target)||i.contains(e.target)||t.classList.remove("active")}),document.addEventListener("DOMContentLoaded",function(){let e=document.querySelectorAll(".material-symbols-outlined");0!==e.length&&e.forEach(e=>{e.addEventListener("click",function(){e.closest(".product-item");let t=window.location.href;navigator.clipboard.writeText(t).then(function(){let e;(e=document.getElementById("share-notification"))&&(e.style.display="block",setTimeout(function(){e.style.display="none"},3e3))},function(e){console.error("Could not copy text: ",e)})})})}),document.addEventListener("DOMContentLoaded",function(){setTimeout(function(){document.getElementById("loader").style.display="none"},1e3)}),document.addEventListener("DOMContentLoaded",()=>{fetch("products.json").then(e=>e.json()).then(e=>{window.products=e})}),document.getElementById("search").addEventListener("blur",()=>{setTimeout(()=>{document.getElementById("search-results").classList.remove("flex")},100)}),document.getElementById("search-mobile").addEventListener("blur",()=>{setTimeout(()=>{document.getElementById("search-results").classList.remove("flex")},100)}),document.getElementById("wishlist-icon").addEventListener("blur",()=>{document.getElementById("wishlist-subset").classList.remove("active")}),document.addEventListener("DOMContentLoaded",async()=>{let e=getQueryParam("id");if(!e){console.error("No product ID found in URL");return}displayProductData(await fetchProductData(e))});
+let slideIndex = 1;
+
+function autoSlides() {
+    plusSlides(1);
+}
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("Slides");
+    let dots = document.getElementsByClassName("dot");
+
+    if (slides.length > 0 && dots.length > 0) {
+        if (n > slides.length) slideIndex = 1;
+        if (n < 1) slideIndex = slides.length;
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+}
+
+function toggleCart() {
+    document.getElementById("cart-items").classList.toggle("active");
+}
+
+function updateMenu() {
+    let isMenuChecked = document.getElementById("responsive-menu").checked;
+    let menu = document.getElementById("menu");
+    if (isMenuChecked) {
+        menu.style.borderBottomRightRadius = "0";
+        menu.style.borderBottomLeftRadius = "0";
+    } else {
+        menu.style.borderRadius = "10px";
+    }
+}
+
+function filterProducts() {
+    let searchTerm = document.getElementById("search").value.toLowerCase();
+    let filteredProducts = window.products.filter(product =>
+        product.title.toLowerCase().includes(searchTerm)
+    );
+    displaySearchResults(filteredProducts, "search-results");
+}
+
+function filterProductsMobile() {
+    let searchTerm = document.getElementById("search-mobile").value.toLowerCase();
+    let filteredProducts = window.products.filter(product =>
+        product.title.toLowerCase().includes(searchTerm)
+    );
+    displaySearchResults(filteredProducts, "search-results");
+}
+
+function displaySearchResults(products, resultsContainerId) {
+    let searchResults = document.getElementById(resultsContainerId);
+    searchResults.classList.add("flex");
+    searchResults.innerHTML = "";
+
+    products.forEach(product => {
+        let highlightedTitle = highlightSearchTerm(product.title, searchTerm);
+        let productItem = document.createElement("div");
+        productItem.classList.add("product-item");
+        productItem.innerHTML = `
+            <img src="${product.image}" alt="${product.title}" />
+            <p class="title">${highlightedTitle}</p>
+            <div class="price">
+                <p class="price-offer">L.E ${product.price}</p>
+            </div>
+        `;
+        productItem.addEventListener("mousedown", () => {
+            window.location.href = `./product-info.html?id=${product.id}`;
+        });
+        searchResults.appendChild(productItem);
+    });
+}
+
+function highlightSearchTerm(text, searchTerm) {
+    if (!searchTerm) return text;
+    let regex = new RegExp(`(${searchTerm})`, 'gi');
+    return text.replace(regex, '<mark>$1</mark>');
+}
+
+function updateWishlist() {
+    let wishlistIcon = document.getElementById("wishlist-icon");
+    let wishlistSubset = document.getElementById("wishlist-subset");
+    let heartIcons = document.querySelectorAll(".product-item .fa-heart");
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    function toggleWishlist(itemElement) {
+        let productItem = itemElement.closest(".product-item");
+        let product = {
+            title: productItem.querySelector(".title").innerText,
+            img: productItem.querySelector("img").src,
+            description: productItem.querySelector(".description").innerText,
+            price: productItem.querySelector(".price-offer").innerText || productItem.querySelector(".price").innerText
+        };
+        let index = wishlist.findIndex(item => item.title === product.title);
+
+        if (index > -1) {
+            wishlist.splice(index, 1);
+            itemElement.classList.remove("liked");
+        } else {
+            wishlist.push(product);
+            itemElement.classList.add("liked");
+        }
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        renderWishlist();
+        updateCartCounter();
+    }
+
+    function renderWishlist() {
+        wishlistSubset.innerHTML = wishlist.map(item => `
+            <div class="wishlist-item" onclick="location.href='./product-info.html?id=${item.id}'">
+                <img src="${item.img}" alt="${item.title}">
+                <p>${item.title}</p>
+                <span class="remove" data-title="${item.title}">&times;</span>
+            </div>
+        `).join("");
+
+        document.querySelectorAll(".wishlist-item .remove").forEach(removeButton => {
+            removeButton.addEventListener("click", (e) => {
+                removeFromWishlist(e.target.dataset.title);
+            });
+        });
+    }
+
+    function removeFromWishlist(title) {
+        let index = wishlist.findIndex(item => item.title === title);
+        if (index > -1) {
+            wishlist.splice(index, 1);
+            localStorage.setItem("wishlist", JSON.stringify(wishlist));
+            renderWishlist();
+            let productItem = [...document.querySelectorAll(".product-item")].find(item => item.querySelector(".title").innerText === title);
+            if (productItem) productItem.querySelector(".fa-heart").classList.remove("liked");
+        }
+    }
+
+    renderWishlist();
+    heartIcons.forEach(icon => {
+        icon.addEventListener("click", () => toggleWishlist(icon));
+    });
+
+    if (wishlistIcon) {
+        wishlistIcon.addEventListener("click", () => {
+            wishlistSubset.classList.toggle("active");
+        });
+    }
+}
+
+function updateCart() {
+    let cartItemsElement = document.getElementById("cart-items");
+    let addToCartButtons = document.querySelectorAll(".add-to-cart");
+    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function addToCart(item) {
+        if (!cartItems.find(cartItem => cartItem.id === item.id)) {
+            cartItems.push(item);
+            localStorage.setItem("cart", JSON.stringify(cartItems));
+            renderCart();
+            updateCartCounter();
+        }
+    }
+
+    function renderCart() {
+        cartItemsElement.innerHTML = cartItems.map(item => `
+            <div class="cart-item" onclick="location.href='./product-info.html?id=${item.id}'">
+                <img src="${item.img}" alt="${item.title}">
+                <div class="cart-item-details">
+                    <p>${item.title}</p>
+                    <p>${item.price}</p>
+                </div>
+                <span class="remove" data-id="${item.id}">&times;</span>
+            </div>
+        `).join("");
+
+        document.querySelectorAll(".cart-item .remove").forEach(removeButton => {
+            removeButton.addEventListener("click", (e) => {
+                removeFromCart(e.target.dataset.id);
+            });
+        });
+    }
+
+    function removeFromCart(id) {
+        cartItems = cartItems.filter(item => item.id !== id);
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+        renderCart();
+        updateCartCounter()
+    }
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            let productItem = button.closest(".product-item");
+            let product = {
+                id: productItem.dataset.productId,
+                title: productItem.querySelector(".title").innerText,
+                img: productItem.querySelector("img").src,
+                price: productItem.querySelector(".price-offer").innerText || productItem.querySelector(".price-no-offer").innerText
+            };
+            addToCart(product);
+        });
+    });
+
+    renderCart();
+}
+
+function updateCartCounter() {
+    let cartCounter = document.getElementById("cart-counter");
+    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    cartCounter.textContent = cartItems.length;
+}
+
+function setupEventListeners() {
+    document.addEventListener("DOMContentLoaded", () => {
+        showSlides(slideIndex);
+        setInterval(autoSlides, 5000);
+
+        updateWishlist();
+        updateCart();
+        updateCartCounter();
+
+        document.getElementById("search").addEventListener("blur", () => {
+            setTimeout(() => {
+                document.getElementById("search-results").classList.remove("flex");
+            }, 100);
+        });
+
+        document.getElementById("wishlist-icon").addEventListener("blur", () => {
+            document.getElementById("wishlist-subset").classList.remove("active");
+        });
+
+        document.addEventListener("mouseup", (e) => {
+            let cartItemsElement = document.getElementById("cart-items");
+            let cartIcon = document.querySelector(".cart-icon");
+            if (!cartItemsElement.contains(e.target) && !cartIcon.contains(e.target)) {
+                cartItemsElement.classList.remove("active");
+            }
+        });
+
+        document.querySelectorAll(".material-symbols-outlined").forEach(icon => {
+            icon.addEventListener("click", () => {
+                navigator.clipboard.writeText(window.location.href).then(
+                    () => {
+                        let notification = document.getElementById("share-notification");
+                        if (notification) {
+                            notification.style.display = "block";
+                            setTimeout(() => {
+                                notification.style.display = "none";
+                            }, 3000);
+                        }
+                    },
+                    (err) => console.error("Could not copy text: ", err)
+                );
+            });
+        });
+
+        setTimeout(() => {
+            document.getElementById("loader").style.display = "none";
+        }, 1000);
+
+        fetch("products.json")
+            .then(response => response.json())
+            .then(products => {
+                window.products = products;
+            });
+    });
+
+    window.addEventListener('storage', (event) => {
+        if (event.key === 'cart') {
+            updateCartCounter();
+        }
+    });
+}
+
+setupEventListeners();
+function hideLoader() {
+    setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+    }, 1000);
+}
+
+document.addEventListener("DOMContentLoaded", hideLoader);
