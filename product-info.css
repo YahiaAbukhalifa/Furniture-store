@@ -175,6 +175,9 @@
 .hidden {
   display: none;
 }
+.relatedproducts .product-item{
+  min-height: 400px;
+}
 .view-more-suggest {
   display: flex;
   justify-content: start;
