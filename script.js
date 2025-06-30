@@ -249,7 +249,16 @@ function setupEventListeners() {
 
         document.querySelectorAll(".material-symbols-outlined").forEach(icon => {
             icon.addEventListener("click", () => {
-                navigator.clipboard.writeText(window.location.href).then(
+                // Find the closest product-item and get its view-more link
+                const productItem = icon.closest(".product-item");
+                const viewMoreLink = productItem.querySelector(".view-more");
+                const urlToCopy = viewMoreLink.getAttribute("onclick").match(/'([^']+)'/)[1];
+                
+                // Get the base URL and construct the full URL
+                const baseUrl = window.location.origin;
+                const fullUrl = baseUrl + "/" + urlToCopy;
+                
+                navigator.clipboard.writeText(fullUrl).then(
                     () => {
                         let notification = document.getElementById("share-notification");
                         if (notification) {

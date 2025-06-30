@@ -1,195 +1,299 @@
 [
-    {
-      "id": "1",
-      "category": "sofas",
-      "material": "fabric",
-      "color": "grey",
-      "rating": "4stars",
-      "availability": "inStock",
-      "price": "2500",
-      "width": "50",
-      "height": "80",
-      "depth": "40",
-      "image": "./assets/product1.webp",
-      "title": "Syltherine",
-      "description": "Stylish cafe chair",
-      "priceOffer": "2500",
-      "ratingCount": "9,999",
-      "priceNoOffer": "3000",
-      "colors": ["blue", "black"],
-      "dimensions": {
-        "width": "50cm",
-        "height": "30cm",
-        "depth": "20cm"
-      }
-    },
-    {
-      "id": "2",
-      "category": "chairs",
-      "material": "fabric",
-      "color": "grey",
-      "rating": "3stars",
-      "availability": "inStock",
-      "price": "2500",
-      "width": "45",
-      "ratingCount": "9,999",
-      "height": "75",
-      "depth": "35",
-      "image": "./assets/product-2.webp",
-      "title": "Leviosa",
-      "description": "Stylish cafe chair",
-      "priceOffer": "2500",
-      "priceNoOffer": "",
-      "colors": ["white" , "black"],
-      "dimensions": {
-        "width": "50cm",
-        "height": "30cm",
-        "depth": "20cm"
-      }
-    },
-    {
-      "id": "3",
-      "category": "sofas",
-      "material": "fabric",
-      "color": "grey",
-      "ratingCount": "9,999",
-      "rating": "4stars",
-      "availability": "inStock",
-      "price": "7000",
-      "width": "70",
-      "height": "90",
-      "depth": "50",
-      "image": "./assets/product-3.webp",
-      "title": "Lolita",
-      "description": "Luxury big sofa",
-      "priceOffer": "7000",
-      "priceNoOffer": "14000",
-      "colors": ["pink","white"],
-      "dimensions": {
-        "width": "50cm",
-        "height": "30cm",
-        "depth": "20cm"
-      }
-    },
-    {
-      "id": "4",
-      "category": "fans",
-      "material": "metal",
-      "color": "white",
-      "ratingCount": "9,999",
-      "rating": "4.5stars",
-      "availability": "preOrder",
-      "price": "500",
-      "width": "30",
-      "height": "40",
-      "depth": "20",
-      "image": "./assets/product-4.webp",
-      "title": "Respira",
-      "description": "Minimalist fan",
-      "priceOffer": "500",
-      "priceNoOffer": "",
-      "colors": ["white" , "black"],
-      "dimensions": {
-        "width": "50cm",
-        "height": "30cm",
-        "depth": "20cm"
-      }
-    },
-    {
-      "id": "5",
-      "category": "lamps",
-      "material": "metal",
-      "color": "white",
-      "rating": "3stars",
-      "ratingCount": "9,999",
-      "availability": "inStock",
-      "price": "1500",
-      "width": "20",
-      "height": "50",
-      "depth": "20",
-      "image": "./assets/product-5.webp",
-      "title": "Grifo",
-      "description": "Night lamp",
-      "priceOffer": "1500",
-      "priceNoOffer": "",
-      "colors": ["white" , "black"],
-      "dimensions": {
-        "width": "50cm",
-        "height": "30cm",
-        "depth": "20cm"
-      }
-    },
-    {
-      "id": "6",
-      "category": "mugs",
-      "material": "ceramic",
-      "color": "white",
-      "rating": "4stars",
-      "availability": "inStock",
-      "price": "150",
-      "width": "10",
-      "ratingCount": "9,999",
-      "height": "15",
-      "depth": "10",
-      "image": "./assets/product-6.webp",
-      "title": "Muggo",
-      "description": "Small mug",
-      "priceOffer": "150",
-      "priceNoOffer": "",
-      "colors": ["white" , "black"],
-      "dimensions": {
-        "width": "50cm",
-        "height": "30cm",
-        "depth": "20cm"
-      }
-    },
-    {
-      "id": "7",
-      "category": "beds",
-      "material": "wood",
-      "color": "pink",
-      "rating": "4stars",
-      "availability": "inStock",
-      "price": "7000",
-      "width": "160",
-      "height": "200",
-      "depth": "50",
-      "ratingCount": "9,999",
-      "image": "./assets/product-7.webp",
-      "title": "Pinkgy",
-      "description": "Cute bed set",
-      "priceOffer": "7000",
-      "priceNoOffer": "14000",
-      "colors": ["white" , "black"],
-      "dimensions": {
-        "width": "50cm",
-        "height": "30cm",
-        "depth": "20cm"
-      }
-    },
-    {
-      "id": "8",
-      "category": "pots",
-      "material": "ceramic",
-      "color": "white",
-      "rating": "4stars",
-      "availability": "inStock",
-      "price": "500",
-      "ratingCount": "9,999",
-      "width": "20",
-      "height": "25",
-      "depth": "20",
-      "image": "./assets/product-8.webp",
-      "title": "Potty",
-      "description": "Minimalist flower pot",
-      "priceOffer": "500",
-      "priceNoOffer": "",
-      "colors": ["white" , "black"],
-      "dimensions": {
-        "width": "50cm",
-        "height": "30cm",
-        "depth": "20cm"
-      }
+  {
+    "id": "1",
+    "category": "sofas",
+    "material": "fabric",
+    "color": "grey",
+    "rating": "4stars",
+    "availability": "inStock",
+    "price": "2500",
+    "width": "50",
+    "height": "80",
+    "depth": "40",
+    "image": "./assets/product1.webp",
+    "title": "Syltherine",
+    "description": "Stylish cafe chair",
+    "priceOffer": "2500",
+    "ratingCount": "9,999",
+    "priceNoOffer": "3000",
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "dimensions": {
+      "width": "50cm",
+      "height": "30cm",
+      "depth": "20cm"
     }
-  ]
-  
+  },
+  {
+    "id": "2",
+    "category": "chairs",
+    "material": "fabric",
+    "color": "grey",
+    "rating": "3stars",
+    "availability": "inStock",
+    "price": "2500",
+    "width": "45",
+    "ratingCount": "9,999",
+    "height": "75",
+    "depth": "35",
+    "image": "./assets/product-2.webp",
+    "title": "Leviosa",
+    "description": "Stylish cafe chair",
+    "priceOffer": "2500",
+    "priceNoOffer": "",
+    "colors": [
+      "white",
+      "black"
+    ],
+    "dimensions": {
+      "width": "50cm",
+      "height": "30cm",
+      "depth": "20cm"
+    }
+  },
+  {
+    "id": "3",
+    "category": "sofas",
+    "material": "fabric",
+    "color": "grey",
+    "ratingCount": "9,999",
+    "rating": "4stars",
+    "availability": "inStock",
+    "price": "7000",
+    "width": "70",
+    "height": "90",
+    "depth": "50",
+    "image": "./assets/product-3.webp",
+    "title": "Lolita",
+    "description": "Luxury big sofa",
+    "priceOffer": "7000",
+    "priceNoOffer": "14000",
+    "colors": [
+      "pink",
+      "white"
+    ],
+    "dimensions": {
+      "width": "50cm",
+      "height": "30cm",
+      "depth": "20cm"
+    }
+  },
+  {
+    "id": "4",
+    "category": "fans",
+    "material": "metal",
+    "color": "white",
+    "ratingCount": "9,999",
+    "rating": "4.5stars",
+    "availability": "preOrder",
+    "price": "500",
+    "width": "30",
+    "height": "40",
+    "depth": "20",
+    "image": "./assets/product-4.webp",
+    "title": "Respira",
+    "description": "Minimalist fan",
+    "priceOffer": "500",
+    "priceNoOffer": "",
+    "colors": [
+      "white",
+      "black"
+    ],
+    "dimensions": {
+      "width": "50cm",
+      "height": "30cm",
+      "depth": "20cm"
+    }
+  },
+  {
+    "id": "5",
+    "category": "lamps",
+    "material": "metal",
+    "color": "white",
+    "rating": "3stars",
+    "ratingCount": "9,999",
+    "availability": "inStock",
+    "price": "1500",
+    "width": "20",
+    "height": "50",
+    "depth": "20",
+    "image": "./assets/product-5.webp",
+    "title": "Grifo",
+    "description": "Night lamp",
+    "priceOffer": "1500",
+    "priceNoOffer": "",
+    "colors": [
+      "white",
+      "black"
+    ],
+    "dimensions": {
+      "width": "50cm",
+      "height": "30cm",
+      "depth": "20cm"
+    }
+  },
+  {
+    "id": "6",
+    "category": "mugs",
+    "material": "ceramic",
+    "color": "white",
+    "rating": "4stars",
+    "availability": "inStock",
+    "price": "150",
+    "width": "10",
+    "ratingCount": "9,999",
+    "height": "15",
+    "depth": "10",
+    "image": "./assets/product-6.webp",
+    "title": "Muggo",
+    "description": "Small mug",
+    "priceOffer": "150",
+    "priceNoOffer": "",
+    "colors": [
+      "white",
+      "black"
+    ],
+    "dimensions": {
+      "width": "50cm",
+      "height": "30cm",
+      "depth": "20cm"
+    }
+  },
+  {
+    "id": "7",
+    "category": "beds",
+    "material": "wood",
+    "color": "pink",
+    "rating": "4stars",
+    "availability": "inStock",
+    "price": "7000",
+    "width": "160",
+    "height": "200",
+    "depth": "50",
+    "ratingCount": "9,999",
+    "image": "./assets/product-7.webp",
+    "title": "Pinkgy",
+    "description": "Cute bed set",
+    "priceOffer": "7000",
+    "priceNoOffer": "14000",
+    "colors": [
+      "white",
+      "black"
+    ],
+    "dimensions": {
+      "width": "50cm",
+      "height": "30cm",
+      "depth": "20cm"
+    }
+  },
+  {
+    "id": "8",
+    "category": "pots",
+    "material": "ceramic",
+    "color": "white",
+    "rating": "4stars",
+    "availability": "inStock",
+    "price": "500",
+    "ratingCount": "9,999",
+    "width": "20",
+    "height": "25",
+    "depth": "20",
+    "image": "./assets/product-8.webp",
+    "title": "Potty",
+    "description": "Minimalist flower pot",
+    "priceOffer": "500",
+    "priceNoOffer": "",
+    "colors": [
+      "white",
+      "black"
+    ],
+    "dimensions": {
+      "width": "50cm",
+      "height": "30cm",
+      "depth": "20cm"
+    }
+  },
+  {
+    "id": "9",
+    "category": "beds",
+    "material": "any",
+    "color": "white",
+    "rating": "5stars",
+    "availability": "inStock",
+    "price": "500",
+    "ratingCount": "1,999",
+    "width": "200",
+    "height": "250",
+    "depth": "50",
+    "image": "./assets/product-9.jpg",
+    "title": "Bed",
+    "description": "bed",
+    "priceOffer": "500",
+    "priceNoOffer": "",
+    "colors": [
+      "white",
+      "black"
+    ],
+    "dimensions": {
+      "width": "200cm",
+      "height": "250cm",
+      "depth": "50cm"
+    }
+  },
+  {
+    "id": "10",
+    "category": "Storage",
+    "material": "any",
+    "color": "white",
+    "rating": "5stars",
+    "availability": "inStock",
+    "price": "500",
+    "ratingCount": "1,999",
+    "width": "200",
+    "height": "250",
+    "depth": "50",
+    "image": "./assets/product-10.jpg",
+    "title": "Corner Storage Cabinet",
+    "description": "Corner Storage Cabinet",
+    "priceOffer": "500",
+    "priceNoOffer": "",
+    "colors": [
+      "white",
+      "black"
+    ],
+    "dimensions": {
+      "width": "200cm",
+      "height": "250cm",
+      "depth": "50cm"
+    }
+  },
+  {
+    "id": "11",
+    "category": "tables",
+    "material": "any",
+    "color": "white",
+    "rating": "5stars",
+    "availability": "inStock",
+    "price": "500",
+    "ratingCount": "1,999",
+    "width": "200",
+    "height": "250",
+    "depth": "50",
+    "image": "./assets/product-11.jpg",
+    "title": "Table",
+    "description": "Table",
+    "priceOffer": "500",
+    "priceNoOffer": "",
+    "colors": [
+      "white",
+      "black"
+    ],
+    "dimensions": {
+      "width": "200cm",
+      "height": "250cm",
+      "depth": "50cm"
+    }
+  }
+]
