@@ -175,10 +175,6 @@
 .hidden {
   display: none;
 }
-.product-item {
-  height: max-content;
-  min-height: 400px;
-}
 .view-more-suggest {
   display: flex;
   justify-content: start;
