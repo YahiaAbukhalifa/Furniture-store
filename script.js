@@ -51,7 +51,7 @@ function filterProducts() {
     let filteredProducts = window.products.filter(product =>
         product.title.toLowerCase().includes(searchTerm)
     );
-    displaySearchResults(filteredProducts, "search-results");
+    displaySearchResults(filteredProducts, "search-results", searchTerm); // Pass searchTerm
 }
 
 function filterProductsMobile() {
@@ -59,10 +59,10 @@ function filterProductsMobile() {
     let filteredProducts = window.products.filter(product =>
         product.title.toLowerCase().includes(searchTerm)
     );
-    displaySearchResults(filteredProducts, "search-results");
+    displaySearchResults(filteredProducts, "search-results", searchTerm); // Pass searchTerm
 }
 
-function displaySearchResults(products, resultsContainerId) {
+function displaySearchResults(products, resultsContainerId, searchTerm) { // Add searchTerm parameter
     let searchResults = document.getElementById(resultsContainerId);
     searchResults.classList.add("flex");
     searchResults.innerHTML = "";
@@ -102,8 +102,8 @@ function updateWishlist() {
         let product = {
             title: productItem.querySelector(".title").innerText,
             img: productItem.querySelector("img").src,
-            description: productItem.querySelector(".description").innerText,
-            price: productItem.querySelector(".price-offer").innerText || productItem.querySelector(".price").innerText
+            description: productItem.querySelector(".description")?.innerText || "",
+            price: productItem.querySelector(".price-offer")?.innerText || productItem.querySelector(".price").innerText
         };
         let index = wishlist.findIndex(item => item.title === product.title);
 
@@ -124,7 +124,7 @@ function updateWishlist() {
             <div class="wishlist-item" onclick="location.href='./product-info.html?id=${item.id}'">
                 <img src="${item.img}" alt="${item.title}">
                 <p>${item.title}</p>
-                <span class="remove" data-title="${item.title}">&times;</span>
+                <span class="remove" data-title="${item.title}">×</span>
             </div>
         `).join("");
 
@@ -180,7 +180,7 @@ function updateCart() {
                     <p>${item.title}</p>
                     <p>${item.price}</p>
                 </div>
-                <span class="remove" data-id="${item.id}">&times;</span>
+                <span class="remove" data-id="${item.id}">×</span>
             </div>
         `).join("");
 
@@ -195,7 +195,7 @@ function updateCart() {
         cartItems = cartItems.filter(item => item.id !== id);
         localStorage.setItem("cart", JSON.stringify(cartItems));
         renderCart();
-        updateCartCounter()
+        updateCartCounter();
     }
 
     addToCartButtons.forEach(button => {
@@ -205,7 +205,7 @@ function updateCart() {
                 id: productItem.dataset.productId,
                 title: productItem.querySelector(".title").innerText,
                 img: productItem.querySelector("img").src,
-                price: productItem.querySelector(".price-offer").innerText || productItem.querySelector(".price-no-offer").innerText
+                price: productItem.querySelector(".price-offer")?.innerText || productItem.querySelector(".price-no-offer").innerText
             };
             addToCart(product);
         });
@@ -283,6 +283,7 @@ function setupEventListeners() {
 }
 
 setupEventListeners();
+
 function hideLoader() {
     setTimeout(() => {
         document.getElementById("loader").style.display = "none";
