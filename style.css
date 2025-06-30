@@ -540,12 +540,6 @@ footer .item {
     align-items: center;
 }
 @media (max-width: 1200px) {
-    .promo {
-        width: 50%;
-    }
-    .slideshow-container {
-        width: 70%;
-    }
     .products-container {
         grid-template-columns: repeat(3, 1fr);
     }
