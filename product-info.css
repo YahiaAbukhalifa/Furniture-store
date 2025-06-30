@@ -176,6 +176,7 @@
   display: none;
 }
 .relatedproducts .product-item{
+  height: max-content;
   min-height: 400px;
 }
 .view-more-suggest {
