@@ -217,6 +217,17 @@
   .relatedproducts .products-container {
     grid-template-columns: repeat(2, 1fr);
   }
+  .details .dimensions{
+    margin-top: unset;
+  }
+  .additional-info{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    margin: 20px 0 20px 0;
+    gap: 20px;
+  }
 }
 .body.ar button{
   font-family: "Noto Kufi Arabic", sans-serif;
